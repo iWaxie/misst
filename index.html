@@ -19,7 +19,7 @@
         /* MissT TEMASI: Pembe */
         ::selection { background: #f06292; color: #fff; }
 
-        /* --- LOGIN EKRANI --- */
+        /* --- LOGIN EKRANI (Zarif ve Sakin) --- */
         #login-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
             background: #09090b;
@@ -27,9 +27,9 @@
             z-index: 10000; transition: opacity 0.8s ease, visibility 0.8s;
         }
         .login-panel {
-            background: #111; border: 1px solid #222;
+            background: #121214; border: 1px solid #1f1f22;
             padding: 50px; border-radius: 8px; width: 400px;
-            box-shadow: 0 20px 40px rgba(240, 98, 146, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
             text-align: center;
         }
         .login-logo {
@@ -39,10 +39,10 @@
             font-size: 28px; font-weight: 300; color: #fff; letter-spacing: -1px;
             font-family: 'Georgia', serif; font-style: italic;
         }
-        .login-panel h2 { color: #fff; font-size: 22px; font-weight: 400; margin-bottom: 5px; letter-spacing: 2px; font-family: 'Georgia', serif;}
-        .login-panel p { color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; font-weight: 600;}
+        .login-panel h2 { color: #fff; font-size: 22px; font-weight: 400; margin-bottom: 5px; letter-spacing: 1px; font-family: 'Georgia', serif;}
+        .login-panel p { color: #888; font-size: 12px; letter-spacing: 1px; margin-bottom: 30px; font-weight: 500;}
         .login-input {
-            width: 100%; background: #080808; border: 1px solid #333;
+            width: 100%; background: #0d0d0f; border: 1px solid #222;
             padding: 14px 15px; border-radius: 4px; color: #777;
             margin-bottom: 15px; font-family: monospace; font-size: 13px;
             cursor: not-allowed; text-align: left;
@@ -50,9 +50,9 @@
         
         .login-btn {
             width: 100%; height: 46px; background: #fff; color: #111; border: none;
-            border-radius: 4px; font-size: 14px; font-weight: 800; text-transform: uppercase;
+            border-radius: 4px; font-size: 14px; font-weight: 600;
             cursor: pointer; transition: all 0.2s; margin-top: 10px;
-            display: flex; align-items: center; justify-content: center; letter-spacing: 2px;
+            display: flex; align-items: center; justify-content: center; letter-spacing: 0.5px;
         }
         .login-btn:hover { background: #f06292; color: #fff; box-shadow: 0 5px 15px rgba(240, 98, 146, 0.4);}
         .spinner { display: none; width: 18px; height: 18px; border: 2px solid #111; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
@@ -66,57 +66,57 @@
 
         /* --- SOL NAVİGASYON (SIDEBAR) --- */
         .sidebar {
-            width: 260px; background: #0a0a0c; border-right: 1px solid #1a1a1c;
+            width: 260px; background: #121214; border-right: 1px solid #1f1f22;
             display: flex; flex-direction: column; padding-top: 20px;
             flex-shrink: 0; z-index: 10;
         }
-        .brand-area { padding: 0 20px 20px 20px; border-bottom: 1px solid #1a1a1c; margin-bottom: 20px; text-align: center;}
-        .brand-area h1 { font-size: 22px; color: #fff; font-weight: 400; letter-spacing: 2px; font-family: 'Georgia', serif;}
-        .brand-area p { color: #f06292; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; margin-top: 5px; font-weight: bold;}
+        .brand-area { padding: 0 20px 20px 20px; border-bottom: 1px solid #1f1f22; margin-bottom: 20px; text-align: center;}
+        .brand-area h1 { font-size: 22px; color: #fff; font-weight: 400; letter-spacing: 1px; font-family: 'Georgia', serif;}
+        .brand-area p { color: #f06292; font-size: 10px; letter-spacing: 1px; margin-top: 5px; font-weight: 500;}
         
         .nav-section { padding: 0 15px; margin-bottom: 25px; }
-        .nav-title { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; padding-left: 10px; font-weight: 600; }
+        .nav-title { font-size: 12px; color: #666; letter-spacing: 0.5px; margin-bottom: 10px; padding-left: 10px; font-weight: 600; }
         
         .nav-item {
             display: flex; align-items: center; gap: 12px; padding: 10px;
             color: #999; text-decoration: none; border-radius: 6px;
             transition: all 0.2s; font-size: 13px; font-weight: 500; cursor: pointer;
         }
-        .nav-item:hover { background: #111; color: #fff; }
+        .nav-item:hover { background: #1a1a1d; color: #fff; }
         .nav-item.active { background: #f06292; color: #fff; }
         .nav-item svg { filter: opacity(0.6); transition: all 0.2s; }
         .nav-item:hover svg, .nav-item.active svg { filter: opacity(1); }
 
-        .user-area { margin-top: auto; padding: 20px; background: #050505; border-top: 1px solid #1a1a1c; display: flex; align-items: center; gap: 12px; }
+        .user-area { margin-top: auto; padding: 20px; background: transparent; border-top: 1px solid #1f1f22; display: flex; align-items: center; gap: 12px; }
         .user-avatar { width: 32px; height: 32px; background: #f06292; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #fff; font-family: 'Georgia', serif; font-style: italic;}
-        .user-info div { font-size: 13px; color: #fff; font-weight: 600; letter-spacing: 1px;}
+        .user-info div { font-size: 13px; color: #fff; font-weight: 500; letter-spacing: 0.5px;}
         .user-info span { font-size: 11px; color: #666; font-family: monospace; }
 
         /* --- ANA ÇALIŞMA ALANI --- */
-        .workspace { flex: 1; display: flex; flex-direction: column; background: #0d0d0f; }
+        .workspace { flex: 1; display: flex; flex-direction: column; background: #09090b; }
         
         .workspace-header {
-            height: 60px; border-bottom: 1px solid #1a1a1c; display: flex;
-            align-items: center; justify-content: space-between; padding: 0 30px; background: #0a0a0c;
+            height: 60px; border-bottom: 1px solid #1f1f22; display: flex;
+            align-items: center; justify-content: space-between; padding: 0 30px; background: #0d0d0f;
         }
-        .breadcrumb { font-size: 12px; color: #666; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;}
-        .breadcrumb span { color: #f06292; font-weight: bold; }
+        .breadcrumb { font-size: 13px; color: #666; font-weight: 500; letter-spacing: 0.5px;}
+        .breadcrumb span { color: #f06292; font-weight: 600; }
         
         .header-actions { display: flex; align-items: center; gap: 12px; }
-        .save-status { font-size: 12px; color: #555; transition: color 0.3s; margin-right: 5px; font-weight: bold; text-transform: uppercase;}
+        .save-status { font-size: 12px; color: #666; transition: color 0.3s; margin-right: 5px; font-weight: 500;}
         .save-status.saved { color: #f06292; }
         
-        /* ZARİF BUTON TASARIMLARI */
+        /* ZARİF BUTON TASARIMLARI (Normal Harf, Yumuşak) */
         .btn-anasayfa {
             background: transparent; color: #f06292; border: 1px solid #f06292; padding: 7px 16px;
-            border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer;
+            border-radius: 20px; font-size: 13px; font-weight: 500; cursor: pointer;
             transition: all 0.3s; display: flex; align-items: center; gap: 6px; letter-spacing: 0.5px;
         }
         .btn-anasayfa:hover { background: #f06292; color: #fff; box-shadow: 0 4px 12px rgba(240, 98, 146, 0.3); }
 
         .btn-download { 
-            background: transparent; color: #ccc; border: 1px solid #555; padding: 7px 16px; 
-            border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; 
+            background: transparent; color: #ccc; border: 1px solid #444; padding: 7px 16px; 
+            border-radius: 20px; font-size: 13px; font-weight: 500; cursor: pointer; 
             transition: all 0.3s; display: flex; align-items: center; gap: 6px; letter-spacing: 0.5px;
         }
         .btn-download:hover { background: #fff; color: #111; border-color: #fff; }
@@ -124,14 +124,14 @@
         
         .btn-publish {
             background: #f06292; color: #fff; border: 1px solid #f06292; padding: 7px 16px;
-            border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer;
+            border-radius: 20px; font-size: 13px; font-weight: 500; cursor: pointer;
             transition: all 0.3s; display: flex; align-items: center; gap: 6px; letter-spacing: 0.5px;
         }
         .btn-publish:hover { background: #c2185b; border-color: #c2185b; box-shadow: 0 4px 12px rgba(240, 98, 146, 0.3); }
         
         .btn-reset { 
             background: transparent; color: #888; border: none; padding: 7px 12px; 
-            font-size: 12px; font-weight: 400; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px;
+            font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.3s; letter-spacing: 0.5px;
         }
         .btn-reset:hover { color: #f06292; }
 
@@ -139,50 +139,50 @@
         .workspace-content { flex: 1; display: flex; overflow: hidden; }
         
         /* Editör Paneli */
-        .editor-panel { flex: 1; padding: 30px; overflow-y: auto; border-right: 1px solid #1a1a1c; }
+        .editor-panel { flex: 1; padding: 30px; overflow-y: auto; border-right: 1px solid #1f1f22; }
         
         .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
         .form-group { display: flex; flex-direction: column; gap: 6px; }
         .form-group.full { grid-column: span 2; }
         
-        label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+        label { font-size: 12px; color: #888; letter-spacing: 0.5px; font-weight: 600; }
         
         input[type="text"], textarea, select {
-            background: #0a0a0c; border: 1px solid #222; color: #ececec;
+            background: #121214; border: 1px solid #1f1f22; color: #ececec;
             padding: 12px 15px; font-family: inherit; font-size: 14px;
             transition: all 0.2s; outline: none; border-radius: 4px;
             -webkit-appearance: none; -moz-appearance: none; appearance: none;
         }
-        input[type="text"]:focus, textarea:focus, select:focus { border-color: #f06292; background: #111; }
+        input[type="text"]:focus, textarea:focus, select:focus { border-color: #f06292; background: #16161a; }
         
         #baslik { font-size: 20px; font-weight: 400; padding: 15px 20px; background: transparent; border-color: #333; font-family: 'Georgia', serif;}
         #ozet { font-size: 14px; font-style: italic; color: #aaa; min-height: 80px; resize: vertical; font-family: 'Georgia', serif;}
         
-        .toolbar { display: flex; gap: 5px; margin-bottom: 10px; background: #111; padding: 5px; border: 1px solid #222; width: max-content; border-radius: 4px;}
+        .toolbar { display: flex; gap: 5px; margin-bottom: 10px; background: #121214; padding: 5px; border: 1px solid #1f1f22; width: max-content; border-radius: 4px;}
         .toolbar-btn { background: transparent; border: none; color: #888; padding: 6px 12px; cursor: pointer; font-size: 13px; font-weight: bold; transition: all 0.2s; border-radius: 4px;}
         .toolbar-btn:hover { background: #222; color: #fff; }
         
         .main-content-group { display: flex; flex-direction: column; }
         #icerik { 
             min-height: 300px; height: 400px; font-size: 15px; line-height: 1.6; 
-            border: none; background: #0a0a0c; resize: vertical;
-            border-left: 3px solid #333; padding: 15px; border-radius: 0;
+            border: none; background: #0d0d0f; resize: vertical;
+            border-left: 3px solid #1f1f22; padding: 15px; border-radius: 0;
         }
         #icerik:focus { border-left-color: #f06292; }
 
         /* Önizleme Paneli */
-        .preview-panel { width: 55%; background: #09090b; padding: 30px; overflow-y: auto; display: block; border-left: 1px solid #1a1a1c;}
-        .preview-header { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 20px; display: flex; justify-content: space-between;}
+        .preview-panel { width: 55%; background: #09090b; padding: 30px; overflow-y: auto; display: block; border-left: 1px solid #1f1f22;}
+        .preview-header { font-size: 12px; color: #666; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 20px; display: flex; justify-content: space-between;}
         
         #live-preview {
             background-color: transparent; overflow: hidden;
             padding-bottom: 30px;
         }
         
-        .empty-state { color: #444; text-align: center; padding: 80px 20px; font-size: 12px; background: #111; border: 1px solid #222; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-radius: 8px;}
+        .empty-state { color: #555; text-align: center; padding: 80px 20px; font-size: 13px; background: #121214; border: 1px solid #1f1f22; font-weight: 500; border-radius: 6px;}
 
         #toast-container { position: fixed; bottom: 30px; right: 30px; z-index: 30000; display: flex; flex-direction: column; gap: 10px; }
-        .toast { background: #fff; color: #111; padding: 12px 20px; border-radius: 4px; font-size: 13px; font-weight: 700; box-shadow: 0 10px 30px rgba(240, 98, 146, 0.3); display: flex; align-items: center; gap: 10px; transform: translateY(100px); opacity: 0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border-left: 4px solid #f06292;}
+        .toast { background: #fff; color: #111; padding: 12px 20px; border-radius: 4px; font-size: 13px; font-weight: 600; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 10px; transform: translateY(100px); opacity: 0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border-left: 4px solid #f06292;}
         .toast.show { transform: translateY(0); opacity: 1; }
         .toast-icon { width: 18px; height: 18px; background: #f06292; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 10px; border-radius: 50%;}
 
@@ -198,9 +198,9 @@
 <body>
 
     <div id="anasayfa-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 20000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
-        <div class="login-panel" style="width: 450px; text-align: left; padding: 40px; box-shadow: 0 20px 50px rgba(240, 98, 146, 0.2);">
-            <h2 style="margin-bottom: 20px; font-size: 18px; color: #fff; border-bottom: 1px solid #333; padding-bottom: 15px; font-family: 'Georgia', serif; font-weight: 400; letter-spacing: 1px;">Anasayfa Şablonu</h2>
-            <p style="font-size: 11px; color: #888; margin-bottom: 20px; text-transform: none; letter-spacing: 0;">Forum anasayfasında görüntülenecek kart için gerekli bilgileri doldurun. Görseliniz otomatik olarak 420x240 boyutuna göre ayarlanıp yüklenecektir.</p>
+        <div class="login-panel" style="width: 450px; text-align: left; padding: 40px; background: #121214; border-color: #1f1f22; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
+            <h2 style="margin-bottom: 20px; font-size: 18px; color: #fff; border-bottom: 1px solid #1f1f22; padding-bottom: 15px; font-family: 'Georgia', serif; font-weight: 400; letter-spacing: 1px;">Anasayfa Şablonu</h2>
+            <p style="font-size: 12px; color: #888; margin-bottom: 20px; font-weight: 400; line-height: 1.5;">Forum anasayfasında görüntülenecek kart için gerekli bilgileri doldurun. Görseliniz varsa otomatik olarak 420x240 boyutuna ayarlanacaktır.</p>
 
             <div class="form-group" style="margin-bottom: 15px;">
                 <label>Konu Yönlendirmesi <span style="color: #f06292;">*</span></label>
@@ -242,7 +242,7 @@
         <aside class="sidebar">
             <div class="brand-area">
                 <h1>MissT</h1>
-                <p>LÜKS YAŞAM VE MODA</p>
+                <p>Lüks Yaşam ve Moda</p>
             </div>
 
             <div class="nav-section">
@@ -251,6 +251,26 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                     Dergi Şablonu
                 </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Kurumsal Bağlantılar</div>
+                <a href="#" target="_blank" class="nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    MissT Forum
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title" style="color: #888; font-weight: 500;">Aradığını bulamadın mı?</div>
+                <a href="https://iwaxie.github.io/dailyglobe/" target="_blank" class="nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    GLOBE-NET
+                </a>
+                <a href="https://iwaxie.github.io/gangland/" target="_blank" class="nav-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    GANGLAND
+                </a>
             </div>
 
             <div class="user-area">
@@ -293,10 +313,10 @@
                     <div class="editor-grid">
                         <div class="form-group full">
                             <label>İnceleme Türü / Kategori</label>
-                            <input type="text" id="kategori" maxlength="100" placeholder="Örn: ÖZEL İNCELEME, TREND, KOLEKSİYON" oninput="otomatikKaydet()">
+                            <input type="text" id="kategori" maxlength="100" placeholder="Örn: Özel İnceleme, Trend, Koleksiyon" oninput="otomatikKaydet()">
                         </div>
                         <div class="form-group full">
-                            <label>Dergi Görseli (Dikey Format Tavsiye Edilir)</label>
+                            <label>Dergi Görseli (İsteğe Bağlı - Dikey Tavsiye Edilir)</label>
                             <div style="display: flex; gap: 8px;">
                                 <input type="text" id="resim" maxlength="1000" placeholder="https://... Veya yandaki butona tıklayın" oninput="otomatikKaydet()" style="flex: 1;">
                                 <button type="button" class="btn-download" style="border-radius: 4px; padding: 0 15px;" id="upload-btn" onclick="document.getElementById('file-upload').click()">📁 Yükle</button>
@@ -305,7 +325,7 @@
                         </div>
                         <div class="form-group full">
                             <label>Fotoğraf Konumu / Künye</label>
-                            <input type="text" id="resimBilgi" maxlength="200" placeholder="Örn: Kare: Vinewood Tepeleri, 2026" oninput="otomatikKaydet()">
+                            <input type="text" id="resimBilgi" maxlength="200" placeholder="Örn: Kare: MissT Arşivi, Vinewood Tepeleri, 2026" oninput="otomatikKaydet()">
                         </div>
                     </div>
 
@@ -445,7 +465,7 @@
         function verileriYukle() {
             let veriVar = false;
             alanlar.forEach(id => {
-                const kayitliVeri = localStorage.getItem('misst_v3_' + id); 
+                const kayitliVeri = localStorage.getItem('misst_v5_' + id); // Key güncellendi
                 if (kayitliVeri) {
                     document.getElementById(id).value = kayitliVeri;
                     veriVar = true;
@@ -457,7 +477,7 @@
         let saveTimeout;
         function otomatikKaydet() {
             alanlar.forEach(id => {
-                localStorage.setItem('misst_v3_' + id, document.getElementById(id).value);
+                localStorage.setItem('misst_v5_' + id, document.getElementById(id).value);
             });
             
             const status = document.getElementById('save-status');
@@ -477,7 +497,7 @@
             if(confirm("Tüm içeriği silmek istediğinize emin misiniz? Bu işlem geri alınamaz.")) {
                 alanlar.forEach(id => {
                     document.getElementById(id).value = '';
-                    localStorage.removeItem('misst_v3_' + id);
+                    localStorage.removeItem('misst_v5_' + id);
                 });
                 uretAndOnizle();
                 document.getElementById('save-status').innerText = "Taslak temizlendi.";
@@ -518,8 +538,7 @@
 
                 const kategori = kategoriInput !== "" ? kategoriInput.toUpperCase() : "ÖZEL İNCELEME";
                 const baslik = baslikInput !== "" ? baslikInput : "Başlık Bekleniyor...";
-                const resimBilgi = resimBilgiInput !== "" ? resimBilgiInput : "Kare: Vinewood Tepeleri, 2026";
-                const resimGercek = resimInput !== "" ? resimInput : "https://via.placeholder.com/400x600?text=Gorsel+Bekleniyor";
+                const resimBilgi = resimBilgiInput !== "" ? resimBilgiInput : "Kare: MissT Arşivi";
 
                 let ozetBBCODE = "";
                 let ozetHTML = "";
@@ -556,12 +575,15 @@
                     }
                 });
 
-                const bbcode = `[div style="max-width: 900px; margin: 0 auto; background-color: #fdfdfd; box-shadow: 0 15px 35px rgba(0,0,0,0.08); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden; border: 1px solid #f0f0f0;"]
-[div style="display: table; width: 100%;"]
+                let layoutBBCODE = "";
+                let layoutHTML = "";
+
+                if (resimInput !== "") {
+                    layoutBBCODE = `[div style="display: table; width: 100%;"]
 
 [div style="display: table-cell; width: 45%; vertical-align: middle; background-color: #fafafa; border-right: 1px solid #eee; padding: 0;"]
 [div style="font-size: 0; width: 100%; margin: 0; padding: 0;"]
-[img]${resimGercek}[/img]
+[img]${resimInput}[/img]
 [/div]
 [div style="font-family: 'Georgia', Times, serif; font-size: 11px; color: #888; font-style: italic; text-align: right; padding: 8px 15px; background-color: #fff; border-top: 1px solid #eee;"]${resimBilgi}[/div]
 [/div]
@@ -578,21 +600,13 @@ ${icerikBBCODE}
 [/div]
 [/div]
 
-[/div]
-[div style="background-color: #111; color: #fff; text-align: center; padding: 15px; font-size: 9px; letter-spacing: 4px; text-transform: uppercase;"]
-MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
-[/div]
 [/div]`;
-                
-                document.getElementById('output').value = bbcode;
 
-                const previewHTML = `
-                <div id="render-target" style="max-width: 900px; margin: 0 auto; background-color: #fdfdfd; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden; border: 1px solid #f0f0f0;">
+                    layoutHTML = `
                     <div style="display: table; width: 100%;">
-                        
                         <div style="display: table-cell; width: 45%; vertical-align: middle; background-color: #fafafa; border-right: 1px solid #eee; padding: 0;">
                             <div style="font-size: 0; width: 100%; margin: 0; padding: 0;">
-                                <img id="preview-image" src="${resimGercek}" crossorigin="anonymous" style="width: 100%; height: auto; display: block;">
+                                <img id="preview-image" src="${resimInput}" crossorigin="anonymous" style="width: 100%; height: auto; display: block;">
                             </div>
                             <div style="font-family: 'Georgia', Times, serif; font-size: 11px; color: #888; font-style: italic; text-align: right; padding: 8px 15px; background-color: #fff; border-top: 1px solid #eee;">${resimBilgi}</div>
                         </div>
@@ -605,8 +619,43 @@ MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
                                 ${icerikHTML}
                             </div>
                         </div>
+                    </div>`;
+                } else {
+                    layoutBBCODE = `[div style="padding: 40px 50px;"]
+[div style="text-align: left;"]
+[div style="font-size: 10px; letter-spacing: 3px; color: #f06292; text-transform: uppercase; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #f06292; display: inline-block; padding-bottom: 5px;"]${kategori}[/div]
 
-                    </div>
+[div style="font-family: 'Georgia', Times, serif; font-size: 38px; color: #111; line-height: 1.1; margin-bottom: 15px; letter-spacing: -0.5px;"]${baslik}[/div]
+
+${ozetBBCODE}
+
+${icerikBBCODE}
+[/div]
+[/div]`;
+
+                    layoutHTML = `
+                    <div style="padding: 40px 50px;">
+                        <div style="text-align: left;">
+                            <div style="font-size: 10px; letter-spacing: 3px; color: #f06292; text-transform: uppercase; font-weight: bold; margin-bottom: 15px; border-bottom: 2px solid #f06292; display: inline-block; padding-bottom: 5px;">${kategori}</div>
+                            <div style="font-family: 'Georgia', Times, serif; font-size: 38px; color: #111; line-height: 1.1; margin-bottom: 15px; letter-spacing: -0.5px;">${baslik}</div>
+                            ${ozetHTML}
+                            ${icerikHTML}
+                        </div>
+                    </div>`;
+                }
+
+                const bbcode = `[div style="max-width: 900px; margin: 0 auto; background-color: #fdfdfd; box-shadow: 0 15px 35px rgba(0,0,0,0.08); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden; border: 1px solid #f0f0f0;"]
+${layoutBBCODE}
+[div style="background-color: #111; color: #fff; text-align: center; padding: 15px; font-size: 9px; letter-spacing: 4px; text-transform: uppercase;"]
+MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
+[/div]
+[/div]`;
+                
+                document.getElementById('output').value = bbcode;
+
+                const previewHTML = `
+                <div id="render-target" style="max-width: 900px; margin: 0 auto; background-color: #fdfdfd; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden; border: 1px solid #f0f0f0;">
+                    ${layoutHTML}
                     <div style="background-color: #111; color: #fff; text-align: center; padding: 15px; font-size: 9px; letter-spacing: 4px; text-transform: uppercase;">
                         MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
                     </div>
@@ -704,11 +753,9 @@ MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
 
         function modalAc() {
             const baslik = document.getElementById('baslik').value.trim();
-            const resim = document.getElementById('resim').value.trim();
             const ozet = document.getElementById('ozet').value.trim();
 
             if (!baslik) { bildirimGoster("Lütfen önce bir Dergi Başlığı girin!"); return; }
-            if (!resim) { bildirimGoster("Lütfen önce bir Dergi Görseli ekleyin!"); return; }
             if (!ozet) { 
                 bildirimGoster("Anasayfa şablonu için Dergi Özeti zorunludur!"); 
                 document.getElementById('ozet').focus(); 
@@ -737,7 +784,6 @@ MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
 
             const btn = document.getElementById('modal-btn-olustur');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '⏳ Görsel Kırpılıyor...';
             btn.disabled = true;
 
             const baslik = document.getElementById('baslik').value.trim();
@@ -747,79 +793,88 @@ MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
             const kategoriRaw = document.getElementById('kategori').value.trim() || "Moda";
             const kategori = kategoriRaw.replace(/\s+/g, ''); 
 
-            let yeniResimUrl = "";
+            let yeniResimUrl = "-";
+            let gosterilecekResim = "-";
 
-            try {
-                let imgBlob;
+            if (resim !== "") {
+                gosterilecekResim = resim;
+                btn.innerHTML = '⏳ Görsel Kırpılıyor...';
                 try {
-                    const res = await fetch(resim, { mode: 'cors', cache: 'no-store' });
-                    if (!res.ok) throw new Error("Doğrudan çekme başarısız.");
-                    imgBlob = await res.blob();
-                } catch (e) {
-                    const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(resim);
-                    const proxyRes = await fetch(proxyUrl, { cache: 'no-store' });
-                    if (!proxyRes.ok) throw new Error("Proxy sunucusu resmi reddetti.");
-                    imgBlob = await proxyRes.blob();
+                    let imgBlob;
+                    try {
+                        const res = await fetch(resim, { mode: 'cors', cache: 'no-store' });
+                        if (!res.ok) throw new Error("Doğrudan çekme başarısız.");
+                        imgBlob = await res.blob();
+                    } catch (e) {
+                        const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(resim);
+                        const proxyRes = await fetch(proxyUrl, { cache: 'no-store' });
+                        if (!proxyRes.ok) throw new Error("Proxy sunucusu resmi reddetti.");
+                        imgBlob = await proxyRes.blob();
+                    }
+
+                    const objectUrl = URL.createObjectURL(imgBlob);
+
+                    yeniResimUrl = await new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.onload = () => {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = 420;
+                            canvas.height = 240;
+                            const ctx = canvas.getContext('2d');
+
+                            const targetRatio = 420 / 240;
+                            const imgRatio = img.width / img.height;
+                            let drawWidth, drawHeight, offsetX, offsetY;
+
+                            if (imgRatio > targetRatio) {
+                                drawHeight = 240;
+                                drawWidth = img.width * (240 / img.height);
+                                offsetX = (420 - drawWidth) / 2;
+                                offsetY = 0;
+                            } else {
+                                drawWidth = 420;
+                                drawHeight = img.height * (420 / img.width);
+                                offsetX = 0;
+                                offsetY = (240 - drawHeight) / 2;
+                            }
+
+                            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+                            URL.revokeObjectURL(objectUrl); 
+
+                            canvas.toBlob(blob => {
+                                if (!blob) return reject(new Error("Canvas kilitlendi."));
+
+                                const formData = new FormData();
+                                formData.append('image', blob, 'cover_420x240.jpg');
+
+                                fetch('https://api.imgbb.com/1/upload?key=fb0bd1082005d123b83a3b5f67113539', {
+                                    method: 'POST',
+                                    body: formData
+                                })
+                                .then(res => res.json())
+                                .then(result => {
+                                    if(result.success) resolve(result.data.url);
+                                    else reject(new Error("ImgBB sunucusu resmi reddetti."));
+                                })
+                                .catch(reject);
+                            }, 'image/jpeg', 0.9);
+                        };
+
+                        img.onerror = () => {
+                            URL.revokeObjectURL(objectUrl);
+                            reject(new Error("Resim tuvale çizilemedi."));
+                        };
+                        
+                        img.src = objectUrl;
+                    });
+                } catch (error) {
+                    console.error(error);
+                    bildirimGoster(`Görsel yüklenemedi, şablon görselsiz veriliyor.`);
                 }
+            }
 
-                const objectUrl = URL.createObjectURL(imgBlob);
-
-                yeniResimUrl = await new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.onload = () => {
-                        const canvas = document.createElement('canvas');
-                        canvas.width = 420;
-                        canvas.height = 240;
-                        const ctx = canvas.getContext('2d');
-
-                        const targetRatio = 420 / 240;
-                        const imgRatio = img.width / img.height;
-                        let drawWidth, drawHeight, offsetX, offsetY;
-
-                        if (imgRatio > targetRatio) {
-                            drawHeight = 240;
-                            drawWidth = img.width * (240 / img.height);
-                            offsetX = (420 - drawWidth) / 2;
-                            offsetY = 0;
-                        } else {
-                            drawWidth = 420;
-                            drawHeight = img.height * (420 / img.width);
-                            offsetX = 0;
-                            offsetY = (240 - drawHeight) / 2;
-                        }
-
-                        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-                        URL.revokeObjectURL(objectUrl); 
-
-                        canvas.toBlob(blob => {
-                            if (!blob) return reject(new Error("Canvas kilitlendi."));
-
-                            const formData = new FormData();
-                            formData.append('image', blob, 'cover_420x240.jpg');
-
-                            fetch('https://api.imgbb.com/1/upload?key=fb0bd1082005d123b83a3b5f67113539', {
-                                method: 'POST',
-                                body: formData
-                            })
-                            .then(res => res.json())
-                            .then(result => {
-                                if(result.success) resolve(result.data.url);
-                                else reject(new Error("ImgBB sunucusu resmi reddetti."));
-                            })
-                            .catch(reject);
-                        }, 'image/jpeg', 0.9);
-                    };
-
-                    img.onerror = () => {
-                        URL.revokeObjectURL(objectUrl);
-                        reject(new Error("Resim tuvale çizilemedi."));
-                    };
-                    
-                    img.src = objectUrl;
-                });
-
-                const anasayfaBBCode = `[b]Haber Başlığı:[/b] ${baslik}
-[b]Haber Kapak Fotoğrafı Bağlantısı (Gerçek Boyutu):[/b] ${resim}
+            const anasayfaBBCode = `[b]Haber Başlığı:[/b] ${baslik}
+[b]Haber Kapak Fotoğrafı Bağlantısı (Gerçek Boyutu):[/b] ${gosterilecekResim}
 [b]Haber Kapak Fotoğrafı Bağlantısı (420x240):[/b] ${yeniResimUrl}
 [b]Haber Açıklaması:[/b] ${ozet}
 [b]Haber Etiketi:[/b] #MissTMagazine #${kategori}
@@ -827,17 +882,12 @@ MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
 [b]Lifeinvader paylaşım linki:[/b] ${liLink}
 [hr]`;
 
-                await navigator.clipboard.writeText(anasayfaBBCode);
-                bildirimGoster("Anasayfa kodu kopyalandı!");
-                modalKapat();
+            await navigator.clipboard.writeText(anasayfaBBCode);
+            bildirimGoster("Anasayfa kodu kopyalandı!");
+            modalKapat();
 
-            } catch (error) {
-                console.error(error);
-                bildirimGoster(`Hata: ${error.message}`);
-            } finally {
-                btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg> Şablonu Kopyala`;
-                btn.disabled = false;
-            }
+            btn.innerHTML = originalText;
+            btn.disabled = false;
         }
     </script>
 </body>
