@@ -222,6 +222,25 @@
         </div>
     </div>
 
+    <div id="import-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 20000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+        <div class="login-panel" style="width: 550px; text-align: left; padding: 40px; background: #121214; border-color: #1f1f22; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
+            <h2 style="margin-bottom: 20px; font-size: 18px; color: #fff; border-bottom: 1px solid #1f1f22; padding-bottom: 15px; font-family: 'Georgia', serif; font-weight: 400; letter-spacing: 1px;">Haberi İçe Aktar</h2>
+            <p style="font-size: 12px; color: #888; margin-bottom: 20px; font-weight: 400; line-height: 1.5;">MissT Magazine şablonuyla daha önceden oluşturulmuş bir BBCode'u aşağıya yapıştırarak metni düzenlemeye devam edebilirsiniz.</p>
+
+            <div class="form-group" style="margin-bottom: 25px;">
+                <textarea id="import-bbcode" rows="10" placeholder="[div style='...']...[/div]" style="resize: vertical; font-family: monospace; font-size: 12px;"></textarea>
+            </div>
+
+            <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+                <button class="btn-reset" onclick="iceAktarModalKapat()">İptal</button>
+                <button class="btn-publish" onclick="bbcodeIceAktar()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    İçe Aktar
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div id="login-screen">
         <div class="login-panel">
             <div class="login-logo">MT</div>
@@ -262,7 +281,7 @@
             </div>
 
             <div class="nav-section">
-                <div class="nav-title" style="color: #888; font-weight: 500;">Aradığını bulamadın mı?</div>
+                <div class="nav-title" style="text-transform: none; color: #888; font-weight: 500;">Aradığını bulamadın mı?</div>
                 <a href="https://iwaxie.github.io/dailyglobe/" target="_blank" class="nav-item">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     GLOBE-NET
@@ -288,9 +307,9 @@
                 <div class="header-actions">
                     <div class="save-status" id="save-status">Taslak güncel.</div>
                     
-                    <button class="btn-anasayfa" onclick="modalAc()">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                        Anasayfa Kodu
+                    <button class="btn-download" onclick="iceAktarModalAc()" style="margin-left: 10px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        İçe Aktar
                     </button>
 
                     <button class="btn-reset" onclick="guvenliTemizle()">Sıfırla</button>
@@ -298,6 +317,11 @@
                     <button class="btn-download" id="btn-indir" onclick="gorseliIndir()">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                         Görseli İndir
+                    </button>
+
+                    <button class="btn-anasayfa" onclick="modalAc()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        Anasayfa Kodu
                     </button>
                     
                     <button class="btn-publish" onclick="kopyalaBBCODE()">
@@ -465,7 +489,7 @@
         function verileriYukle() {
             let veriVar = false;
             alanlar.forEach(id => {
-                const kayitliVeri = localStorage.getItem('misst_v5_' + id); // Key güncellendi
+                const kayitliVeri = localStorage.getItem('misst_v6_' + id); // Key güncellendi
                 if (kayitliVeri) {
                     document.getElementById(id).value = kayitliVeri;
                     veriVar = true;
@@ -477,7 +501,7 @@
         let saveTimeout;
         function otomatikKaydet() {
             alanlar.forEach(id => {
-                localStorage.setItem('misst_v5_' + id, document.getElementById(id).value);
+                localStorage.setItem('misst_v6_' + id, document.getElementById(id).value);
             });
             
             const status = document.getElementById('save-status');
@@ -497,7 +521,7 @@
             if(confirm("Tüm içeriği silmek istediğinize emin misiniz? Bu işlem geri alınamaz.")) {
                 alanlar.forEach(id => {
                     document.getElementById(id).value = '';
-                    localStorage.removeItem('misst_v5_' + id);
+                    localStorage.removeItem('misst_v6_' + id);
                 });
                 uretAndOnizle();
                 document.getElementById('save-status').innerText = "Taslak temizlendi.";
@@ -751,6 +775,78 @@ MISST MAGAZINE © 2026 • LÜKS YAŞAM VE MODA
             }
         }
 
+        // --- YENİ: İÇE AKTAR MODAL İŞLEVLERİ ---
+        function iceAktarModalAc() {
+            document.getElementById('import-modal').style.display = "flex";
+            document.getElementById('import-bbcode').value = "";
+        }
+
+        function iceAktarModalKapat() {
+            document.getElementById('import-modal').style.display = "none";
+        }
+
+        function bbcodeIceAktar() {
+            const rawBBCode = document.getElementById('import-bbcode').value.trim();
+            if (!rawBBCode) {
+                bildirimGoster("Lütfen bir kod yapıştırın!");
+                return;
+            }
+
+            if (!rawBBCode.includes("MISST MAGAZINE © 2026")) {
+                bildirimGoster("Bu kod MissT şablonuna ait değil!");
+                return;
+            }
+
+            try {
+                // Kategori
+                const katMatch = rawBBCode.match(/padding-bottom: 5px;"](.*?)\[\/div\]/);
+                if (katMatch) document.getElementById('kategori').value = katMatch[1];
+
+                // Başlık
+                const basMatch = rawBBCode.match(/letter-spacing: -0.5px;"](.*?)\[\/div\]/);
+                if (basMatch) document.getElementById('baslik').value = basMatch[1];
+
+                // Özet
+                const ozetMatch = rawBBCode.match(/margin-bottom: 30px;"]([\s\S]*?)\[\/div\]/);
+                if (ozetMatch) document.getElementById('ozet').value = ozetMatch[1].trim();
+
+                // Resim ve Bilgi
+                const imgMatch = rawBBCode.match(/\[img\](.*?)\[\/img\]/);
+                const infoMatch = rawBBCode.match(/background-color: #fff; border-top: 1px solid #eee;"](.*?)\[\/div\]/);
+                
+                if (imgMatch) {
+                    document.getElementById('resim').value = imgMatch[1];
+                    if (infoMatch) document.getElementById('resimBilgi').value = infoMatch[1];
+                } else {
+                    document.getElementById('resim').value = "";
+                    document.getElementById('resimBilgi').value = "";
+                }
+
+                // İçerik ve Drop Cap temizliği
+                const icerikRegex = /\[div style="font-family: 'Georgia', Times, serif; font-size: 15px; line-height: 1.7; color: #333; text-align: justify; margin-bottom: 20px;"\]([\s\S]*?)\[\/div\]/g;
+                let icerikM = [];
+                let match;
+                while ((match = icerikRegex.exec(rawBBCode)) !== null) {
+                    let p = match[1].trim();
+                    p = p.replace(/\[span style="float: left; font-size: 48px; line-height: 35px; padding-top: 5px; padding-right: 8px; color: #f06292; font-family: 'Georgia', Times, serif;"\](.*?)\[\/span\]/g, '$1');
+                    icerikM.push(p);
+                }
+                
+                if (icerikM.length > 0) {
+                    document.getElementById('icerik').value = icerikM.join('\n');
+                }
+
+                otomatikKaydet();
+                bildirimGoster("Şablon başarıyla içe aktarıldı!");
+                iceAktarModalKapat();
+
+            } catch (e) {
+                bildirimGoster("Kod okunurken bir hata oluştu.");
+                console.error(e);
+            }
+        }
+
+        // --- ANASAYFA KODU İŞLEVLERİ ---
         function modalAc() {
             const baslik = document.getElementById('baslik').value.trim();
             const ozet = document.getElementById('ozet').value.trim();
